@@ -94,6 +94,8 @@ class ContextPrecision(MetricWithLLM):
         score = np.nan
         data = [item if isinstance(item, dict) else {} for item in json_responses]
 
+        print(data)
+
         verdict_list = [
             (
                 int("1" == resp.get("verdict", "").strip())
