@@ -95,7 +95,7 @@ class ContextRecall(MetricWithLLM):
         data = [item if isinstance(item, dict) else {} for item in data]
         data = [
             (
-                int(item.get("attributed").strip() == "1")
+                int(item.get("attributed", "").strip() == "1")
                 if item.get("attributed")
                 else np.nan
             )
